@@ -1,5 +1,5 @@
 class GuestEducatorsController < ApplicationController
-  before_action :set_guest_educator, only: [:show, :edit, :update, :destroy]
+  before_action :set_guest_educator, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /guest_educators
   # GET /guest_educators.json
