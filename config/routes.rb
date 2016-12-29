@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :class_sessions
+
   resources :grades
 
   resources :guest_educators do

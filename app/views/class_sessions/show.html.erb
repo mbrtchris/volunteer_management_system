@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @class_session.subject %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @class_session.notes %>
+</p>
+
+<p>
+  <strong>Number of students:</strong>
+  <%= @class_session.number_of_students %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @class_session.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @class_session.end_time %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @class_session.room %>
+</p>
+
+<%= link_to 'Edit', edit_class_session_path(@class_session) %> |
+<%= link_to 'Back', class_sessions_path %>
