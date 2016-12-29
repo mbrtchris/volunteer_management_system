@@ -1,44 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Profile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Profile %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:is_educator) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.is_educator %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:is_volunteer) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.is_volunteer %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:personal_statement) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.personal_statement %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.last_name %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Is educator:</strong>
-  <%= @profile.is_educator %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Is volunteer:</strong>
-  <%= @profile.is_volunteer %>
-</p>
-
-<p>
-  <strong>Personal statement:</strong>
-  <%= @profile.personal_statement %>
-</p>
-
-<p>
-  <strong>Organization:</strong>
-  <%= @profile.organization %>
-</p>
-
-<p>
-  <strong>Class session:</strong>
-  <%= @profile.class_session %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>

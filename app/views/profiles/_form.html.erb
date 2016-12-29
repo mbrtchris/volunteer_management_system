@@ -1,18 +1,40 @@
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :is_educator %>
-    <%= f.input :is_volunteer %>
-    <%= f.input :personal_statement %>
-    <%= f.association :organization %>
-    <%= f.association :class_session %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
+<%= form_for @profile, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :is_educator, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :is_educator, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :is_volunteer, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :is_volunteer, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :personal_statement, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :personal_statement, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :first_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :first_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :last_name, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  profiles_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
