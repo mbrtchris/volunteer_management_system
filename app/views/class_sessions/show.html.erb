@@ -1,34 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ClassSession -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ClassSession %></h1>
+</div>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @class_session.subject %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:subject) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.subject %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notes) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.notes %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:number_of_students) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.number_of_students %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:start_time) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.start_time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:end_time) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.end_time %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:room) %></dt>
+      <dd><pre class="prettyprint"><%= @class_session.room %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @class_session.notes %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              class_sessions_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_class_session_path(@class_session), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              class_session_path(@class_session),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Number of students:</strong>
-  <%= @class_session.number_of_students %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @class_session.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @class_session.end_time %>
-</p>
-
-<p>
-  <strong>Room:</strong>
-  <%= @class_session.room %>
-</p>
-
-<%= link_to 'Edit', edit_class_session_path(@class_session) %> |
-<%= link_to 'Back', class_sessions_path %>

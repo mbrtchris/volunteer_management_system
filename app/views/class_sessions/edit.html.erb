@@ -1,6 +1,5 @@
-<h1>Editing class_session</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @class_session %> |
-<%= link_to 'Back', class_sessions_path %>
+<%- model_class = ClassSession -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => ClassSession %></h1>
+</div>
+<%= render :partial => 'form' %>
