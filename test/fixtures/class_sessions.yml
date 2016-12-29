@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  notes: MyText
+  number_of_students: 1
+  start_time: 2016-12-29 19:02:26
+  end_time: 2016-12-29 19:02:26
+  room: MyString
+
+two:
+  subject: MyString
+  notes: MyText
+  number_of_students: 1
+  start_time: 2016-12-29 19:02:26
+  end_time: 2016-12-29 19:02:26
+  room: MyString
