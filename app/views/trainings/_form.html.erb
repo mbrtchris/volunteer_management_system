@@ -1,0 +1,12 @@
+<%= simple_form_for(@training) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :training_date %>
+    <%= f.input :class_size %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
