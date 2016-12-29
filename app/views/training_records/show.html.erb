@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @training_record.profile %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @training_record.type %>
+</p>
+
+<p>
+  <strong>Training:</strong>
+  <%= @training_record.training %>
+</p>
+
+<p>
+  <strong>Has passed:</strong>
+  <%= @training_record.has_passed %>
+</p>
+
+<p>
+  <strong>Expires at:</strong>
+  <%= @training_record.expires_at %>
+</p>
+
+<%= link_to 'Edit', edit_training_record_path(@training_record) %> |
+<%= link_to 'Back', training_records_path %>

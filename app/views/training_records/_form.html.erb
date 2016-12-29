@@ -1,0 +1,15 @@
+<%= simple_form_for(@training_record) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :profile %>
+    <%= f.input :type %>
+    <%= f.association :training %>
+    <%= f.input :has_passed %>
+    <%= f.input :expires_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
