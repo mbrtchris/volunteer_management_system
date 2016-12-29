@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  is_educator: false
+  is_volunteer: false
+  personal_statement: MyText
+  organization_id: 
+  class_session_id: 
+  first_name: MyString
+  last_name: MyString
+
+two:
+  user_id: 
+  is_educator: false
+  is_volunteer: false
+  personal_statement: MyText
+  organization_id: 
+  class_session_id: 
+  first_name: MyString
+  last_name: MyString
