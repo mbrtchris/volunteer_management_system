@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p>
+
+<p>
+  <strong>Is educator:</strong>
+  <%= @profile.is_educator %>
+</p>
+
+<p>
+  <strong>Is volunteer:</strong>
+  <%= @profile.is_volunteer %>
+</p>
+
+<p>
+  <strong>Personal statement:</strong>
+  <%= @profile.personal_statement %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @profile.organization %>
+</p>
+
+<p>
+  <strong>Class session:</strong>
+  <%= @profile.class_session %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
