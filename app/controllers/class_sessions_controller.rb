@@ -1,5 +1,5 @@
 class ClassSessionsController < ApplicationController
-  before_action :set_class_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_class_session, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /class_sessions
   # GET /class_sessions.json
