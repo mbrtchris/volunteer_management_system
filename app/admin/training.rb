@@ -1,4 +1,5 @@
 ActiveAdmin.register Training do
+  permit_params :training_date, :class_size
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
