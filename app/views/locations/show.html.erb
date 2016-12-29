@@ -1,49 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Location -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Location %></h1>
+</div>
 
-<p>
-  <strong>Address1:</strong>
-  <%= @location.address1 %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address1) %></dt>
+      <dd><pre class="prettyprint"><%= @location.address1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address2) %></dt>
+      <dd><pre class="prettyprint"><%= @location.address2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @location.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @location.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zipcode) %></dt>
+      <dd><pre class="prettyprint"><%= @location.zipcode %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:is_mailing) %></dt>
+      <dd><pre class="prettyprint"><%= @location.is_mailing %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Address2:</strong>
-  <%= @location.address2 %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              locations_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_location_path(@location), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              location_path(@location),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @location.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @location.state %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @location.zipcode %>
-</p>
-
-<p>
-  <strong>Is mailing:</strong>
-  <%= @location.is_mailing %>
-</p>
-
-<p>
-  <strong>Organization:</strong>
-  <%= @location.organization %>
-</p>
-
-<p>
-  <strong>Profile:</strong>
-  <%= @location.profile %>
-</p>
-
-<p>
-  <strong>Training:</strong>
-  <%= @location.training %>
-</p>
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
