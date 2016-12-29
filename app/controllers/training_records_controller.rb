@@ -1,5 +1,5 @@
 class TrainingRecordsController < ApplicationController
-  before_action :set_training_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_training_record, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /training_records
   # GET /training_records.json
