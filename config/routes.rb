@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :grades
+
   resources :guest_educators do
   #->Prelang (voting/acts_as_votable)
   member do
