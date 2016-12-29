@@ -1,27 +1,38 @@
-<h1>Listing trainings</h1>
-
-<table>
+<%- model_class = Training -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Training %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Training date</th>
-      <th>Class size</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:training_date) %></th>
+      <th><%= model_class.human_attribute_name(:class_size) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @trainings.each do |training| %>
       <tr>
+        <td><%= training.id %></td>
         <td><%= training.training_date %></td>
         <td><%= training.class_size %></td>
-        <td><%= link_to 'Show', training %></td>
-        <td><%= link_to 'Edit', edit_training_path(training) %></td>
-        <td><%= link_to 'Destroy', training, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l training.created_at, format: :long %></td>
+        <td>
+          <%= link_to training_path(training), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to training_path(training), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Training', new_training_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_training_path,
+            :class => 'btn btn-primary' %>
