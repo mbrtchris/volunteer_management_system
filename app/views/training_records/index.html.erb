@@ -1,33 +1,40 @@
-<h1>Listing training_records</h1>
-
-<table>
+<%- model_class = TrainingRecord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => TrainingRecord %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Profile</th>
-      <th>Type</th>
-      <th>Training</th>
-      <th>Has passed</th>
-      <th>Expires at</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:has_passed) %></th>
+      <th><%= model_class.human_attribute_name(:expires_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @training_records.each do |training_record| %>
       <tr>
-        <td><%= training_record.profile %></td>
+        <td><%= training_record.id %></td>
         <td><%= training_record.type %></td>
-        <td><%= training_record.training %></td>
         <td><%= training_record.has_passed %></td>
         <td><%= training_record.expires_at %></td>
-        <td><%= link_to 'Show', training_record %></td>
-        <td><%= link_to 'Edit', edit_training_record_path(training_record) %></td>
-        <td><%= link_to 'Destroy', training_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l training_record.created_at, format: :long %></td>
+        <td>
+          <%= link_to training_record_path(training_record), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to training_record_path(training_record), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Training record', new_training_record_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_training_record_path,
+            :class => 'btn btn-primary' %>
