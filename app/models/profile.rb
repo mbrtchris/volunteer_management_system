@@ -4,4 +4,5 @@ class Profile < ActiveRecord::Base
   belongs_to :class_session
   has_many :programs
   has_one :location
+  acts_as_votable 
 end
