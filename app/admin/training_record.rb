@@ -1,4 +1,5 @@
 ActiveAdmin.register TrainingRecord do
+  permit_params :type, :has_passed, :expires_at
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
