@@ -1,6 +1,5 @@
-<h1>Editing guest_educator</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @guest_educator %> |
-<%= link_to 'Back', guest_educators_path %>
+<%- model_class = GuestEducator -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => GuestEducator %></h1>
+</div>
+<%= render :partial => 'form' %>
