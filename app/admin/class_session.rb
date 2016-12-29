@@ -1,4 +1,5 @@
 ActiveAdmin.register ClassSession do
+  permit_params :subject, :notes, :number_of_students, :start_time, :end_time, :room
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
