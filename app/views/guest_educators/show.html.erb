@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @guest_educator.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @guest_educator.name %>
+</p>
+
+<p>
+  <strong>Class session:</strong>
+  <%= @guest_educator.class_session %>
+</p>
+
+<%= link_to 'Edit', edit_guest_educator_path(@guest_educator) %> |
+<%= link_to 'Back', guest_educators_path %>

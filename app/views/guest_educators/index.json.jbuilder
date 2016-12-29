@@ -1,0 +1,1 @@
+json.array! @guest_educators, partial: 'guest_educators/guest_educator', as: :guest_educator

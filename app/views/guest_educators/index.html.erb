@@ -1,0 +1,29 @@
+<h1>Listing guest_educators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Class session</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @guest_educators.each do |guest_educator| %>
+      <tr>
+        <td><%= guest_educator.email %></td>
+        <td><%= guest_educator.name %></td>
+        <td><%= guest_educator.class_session %></td>
+        <td><%= link_to 'Show', guest_educator %></td>
+        <td><%= link_to 'Edit', edit_guest_educator_path(guest_educator) %></td>
+        <td><%= link_to 'Destroy', guest_educator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Guest educator', new_guest_educator_path %>
